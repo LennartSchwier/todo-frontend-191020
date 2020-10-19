@@ -8,8 +8,8 @@ export default function Todo({ id, status, description, deleteTodoItemFromList, 
     return (
         <StyledTodo>
             <StyledHeader>{description}</StyledHeader>
-            <Button variant="contained" color="primary" onClick={() => deleteTodoItemFromList(id)}>delete</Button>
-            <Button variant="contained" color="primary" disabled={status === "DONE"} onClick={() => upgradeTodoItem(id, description, status)}>update</Button>
+            <Button  color="primary" onClick={() => deleteTodoItemFromList(id)}>delete</Button>
+            <Button  color="primary" disabled={status === "DONE"} onClick={() => upgradeTodoItem(id, description, status)}>update</Button>
         </StyledTodo>
     );
 }
