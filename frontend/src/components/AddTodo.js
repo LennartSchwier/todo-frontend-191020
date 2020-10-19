@@ -6,6 +6,7 @@ export default function AddTodo({onAdd}) {
     const handleSubmit = (event) => {
         event.preventDefault();
         onAdd(description);
+        setDescription("");
     }
 
     return (
