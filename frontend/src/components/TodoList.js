@@ -2,12 +2,12 @@ import React from 'react';
 import Todo from './Todo';
 import styled from 'styled-components';
 
-export default function TodoList({ todos }) {
+export default function TodoList({ todos, deleteTodoItemFromFrontend }) {
     return (
         <StyledList>
             {todos.map((todo) => (
                 <li key={todo.id}>
-                    <Todo {...todo} />
+                    <Todo id={todo.id} status={todo.status} description={todo.description} deleteTodoItemFromFrontend={deleteTodoItemFromFrontend} />
                 </li>
             ))}
         </StyledList>

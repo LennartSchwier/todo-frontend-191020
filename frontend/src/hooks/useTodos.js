@@ -8,5 +8,13 @@ export default function useTodos() {
         getTodos().then((todos) => setTodos(todos));
     }, []);
 
-    return [todos];
+    const addTodo = (newTodoItem) => {
+        setTodos([...todos, newTodoItem])
+    }
+
+    const deleteTodoItemFromFrontend = (id) => {
+        setTodos(todos.filter(todo => todo.id !== id))
+    }
+
+    return [todos, addTodo, deleteTodoItemFromFrontend];
 }

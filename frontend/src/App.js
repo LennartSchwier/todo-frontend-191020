@@ -1,15 +1,17 @@
-import React from 'react';
+import React from "react";
 import styled from 'styled-components/macro';
 import TodoList from './components/TodoList';
 import useTodos from './hooks/useTodos';
+import AddTodo from "./components/AddTodo";
 
 export default function App() {
-    const [todos] = useTodos();
+    const [todos, addTodo, deleteTodoItemFromFrontend] = useTodos();
 
     return (
         <Main>
             <h1>Super Kanban Board </h1>
-            <TodoList todos={todos} />
+            <AddTodo onAdd={(todoItem) => addTodo(todoItem)}/>
+            <TodoList todos={todos} deleteTodoItemFromFrontend={deleteTodoItemFromFrontend}/>
         </Main>
     );
 }
