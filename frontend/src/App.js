@@ -3,6 +3,7 @@ import styled from 'styled-components/macro';
 import TodoList from './components/TodoList';
 import useTodos from './hooks/useTodos';
 import AddTodo from "./components/AddTodo";
+import Button from "@material-ui/core/Button/Button";
 
 export default function App() {
     const [todos, addTodo, deleteTodoItemFromList, upgradeTodoItem] = useTodos();
@@ -43,7 +44,7 @@ const Main = styled.main`
     padding: 8px;
 
     h1 {
-        color: hotpink;
+        color: #001064;
     }
 `;
 

@@ -7,7 +7,7 @@ export default function TodoList({todos, deleteTodoItemFromList, onAdd, upgradeT
 
     return (
         <StyledList>
-            <h2>{mapStatus(checkStatus)}</h2>
+            <StyledHeader>{mapStatus(checkStatus)}</StyledHeader>
             {todos
                 .filter(todo => todo.status === checkStatus)
                 .map((todo) => (
@@ -34,3 +34,7 @@ const StyledList = styled.ul`
         margin-top: 12px;
     }
 `;
+
+const StyledHeader = styled.h2`
+    color: #001064;
+`
