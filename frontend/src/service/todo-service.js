@@ -17,16 +17,13 @@ export const deleteTodoItem = (id) => {
         .delete("/api/todo/" + id)
 }
 
-export const upgradeTodoItem = (id, description, status, deleteTodoItemFromFrontend, onAdd) => {
+export const putTodoItem = (id, description, status) => {
     const newStatus = status === "OPEN" ? "IN_PROGRESS" : "DONE";
-    axios
+    return axios
         .put("api/todo/" + id, {
             description: description,
             id: id,
             status: newStatus
         })
-        .then(response => onAdd(response.data))
-        .then(() => deleteTodoItemFromFrontend(id))
-        .catch(error => console.log(error))
-
+        .then(response => (response.data))
 }

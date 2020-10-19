@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import {deleteTodoItem, getTodos, sendTodoItem} from '../service/todo-service';
+import {deleteTodoItem, getTodos, putTodoItem, sendTodoItem} from '../service/todo-service';
 
 export default function useTodos() {
     const [todos, setTodos] = useState([]);
@@ -16,7 +16,11 @@ export default function useTodos() {
         deleteTodoItem(id).then(() => setTodos(todos.filter(todo => todo.id !== id)));
     }
 
-    // TODO: eigene update function schreiben die "setTodos([...todos, newTodoItem])" beinhaltet
+    const upgradeTodoItem = (id, description, status) => {
+        putTodoItem(id, description, status)
+            .then((newTodoItem) => setTodos([...todos.filter(todo => todo.id !== id), newTodoItem]))
 
-    return [todos, addTodo, deleteTodoItemFromList];
+    }
+
+    return [todos, addTodo, deleteTodoItemFromList, upgradeTodoItem];
 }

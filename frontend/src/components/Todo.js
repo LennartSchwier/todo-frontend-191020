@@ -1,13 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
-import {upgradeTodoItem} from "../service/todo-service";
 
-export default function Todo({ id, status, description, deleteTodoItemFromList, onAdd}) {
+export default function Todo({ id, status, description, deleteTodoItemFromList, upgradeTodoItem}) {
 
-    // delete und add function aus argumenten gelöscht
+
     return (
         <StyledTodo>
-            <h3>{description}</h3>
+            <h3>{description}, {status}</h3>
             <button onClick={() => upgradeTodoItem(id, description, status)}>update</button>
             <button onClick={() => deleteTodoItemFromList(id)}>delete</button>
         </StyledTodo>
