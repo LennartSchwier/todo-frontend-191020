@@ -10,8 +10,8 @@ export default function App() {
     return (
         <Main>
             <h1>Super Kanban Board </h1>
-            <AddTodo onAdd={(todoItem) => addTodo(todoItem)}/>
-            <TodoList todos={todos} deleteTodoItemFromFrontend={deleteTodoItemFromFrontend}/>
+            <AddTodo onAdd={addTodo}/>
+            <TodoList todos={todos} deleteTodoItemFromFrontend={deleteTodoItemFromFrontend} onAdd={addTodo}/>
         </Main>
     );
 }

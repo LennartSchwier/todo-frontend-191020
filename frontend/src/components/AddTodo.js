@@ -9,7 +9,7 @@ export default function AddTodo({onAdd}) {
         <form>
             <label>Add a new todo</label>
             <input type={"text"} onChange={event => setDescription(event.target.value)}/>
-            <button type={"button"} onClick={() => sendTodoItem(description, onAdd)}>add note</button>
+            <button type={"button"} onClick={() => onAdd(description)}>add note</button>
         </form>
     );
 }
