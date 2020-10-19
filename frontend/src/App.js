@@ -48,6 +48,7 @@ const Main = styled.main`
 `;
 
 const Board = styled.section`
-    display: flex;
+    display: grid;
+    grid: 150px / 30% 30% 30%;
     justify-content: space-evenly;
 `

@@ -1,14 +1,9 @@
 import React from 'react';
 import Todo from './Todo';
 import styled from 'styled-components';
+import {mapStatus} from "../utils/todoUtils";
 
 export default function TodoList({todos, deleteTodoItemFromList, onAdd, upgradeTodoItem, checkStatus}) {
-
-    const mapStatus = (checkStatus) => {
-        if (checkStatus === "OPEN") {
-            return "das muss ich noch erledigen"
-        }
-    }
 
     return (
         <StyledList>

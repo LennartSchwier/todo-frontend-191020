@@ -7,7 +7,7 @@ export default function Todo({ id, status, description, deleteTodoItemFromList, 
     return (
         <StyledTodo>
             <h3>{description}, {status}</h3>
-            <button onClick={() => upgradeTodoItem(id, description, status)}>update</button>
+            <button disabled={status === "DONE"} onClick={() => upgradeTodoItem(id, description, status)}>update</button>
             <button onClick={() => deleteTodoItemFromList(id)}>delete</button>
         </StyledTodo>
     );
