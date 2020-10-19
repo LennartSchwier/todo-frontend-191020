@@ -1,15 +1,20 @@
 import React, {useState} from "react";
-import {sendTodoItem} from "../service/todo-service";
 
 export default function AddTodo({onAdd}) {
 
     const [description, setDescription] = useState("");
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        onAdd(description);
+    }
 
     return (
-        <form>
-            <label>Add a new todo</label>
-            <input type={"text"} onChange={event => setDescription(event.target.value)}/>
-            <button type={"button"} onClick={() => onAdd(description)}>add note</button>
+        <form onSubmit={handleSubmit}>
+            <label>
+                Add a new todo
+                <input type={"text"} value={description} onChange={event => setDescription(event.target.value)}/>
+            </label>
+            <button type={"submit"}>add note</button>
         </form>
     );
 }
