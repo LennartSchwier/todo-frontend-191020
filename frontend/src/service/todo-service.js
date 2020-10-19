@@ -12,11 +12,9 @@ export const sendTodoItem = (description) => {
         .then(response => (response.data))
 }
 
-export const deleteTodoItem = (id, deleteTodoItemFromFrontend) => {
-    axios
+export const deleteTodoItem = (id) => {
+    return axios
         .delete("/api/todo/" + id)
-        .then(() => deleteTodoItemFromFrontend(id))
-        .catch(error => console.log(error))
 }
 
 export const upgradeTodoItem = (id, description, status, deleteTodoItemFromFrontend, onAdd) => {
